@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FlashFeed</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style media="screen">
+          /* width */
+      ::-webkit-scrollbar {
+      width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+      background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-500">
+    <div class='bg-gray-900 p-4 flex justify-between items-center text-white'>
+
+      <div class="flex items-center">
+        <h1 class="font-bold">FlashFeed</h1>
+      </div>
+
+      <div>
+<!-- stuff here -->
+      </div>
+
+    </div>
+
+
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+
+
+    <div class='flex flex-col items-center justify-center mt-10'>
+      <div class='flex flex-col items-center w-8/12 bg-gray-700 m-3 rounded border-black border-2'>
+
+      <h1 class='mt-3 flex justify-center text-white font-bold mb-3 text-4xl'>FlashFeed - Lightning Fast News!</h1>
+
+      <form class="mt-4" method="GET">
+        <input type="text" name="srch" value="" class='' style='width:400px;height:40px;'>
+        <input type="submit" name="" value="Submit" class='bg-green-400 hover:bg-green-500 rounded p-2 m-2 text-white font-bold'>
+      </form>
+
+      <!-- <hr style="width:40%;text-align:left;margin-left:0;border-width:2px;" class="mt-2 rounded"> -->
+      <h1 class='mt-3 flex justify-center text-white font-bold mb-3 text-2xl'>Trending Topics</h1>
+      <div class='flex flex-row'>
+        <a href="/?srch=cricket" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Cricket</a>
+        <a href="/?srch=football" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Football</a>
+        <a href="/?srch=technology" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Technology</a>
+        <a href="/?srch=music" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Music</a>
+        <a href="/?srch=business" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Business</a>
+        <a href="/?srch=formula1" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Formula-1</a>
+      </div>
+
+      <div class='flex flex-row'>
+        <a href="/?srch=hollywood" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Hollywood</a>
+        <a href="/?srch=covid" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Covid'19</a>
+        <a href="/?srch=gaming" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Gaming</a>
+        <a href="/?srch=finance" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Finance</a>
+        <a href="/?srch=NBA" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>NBA</a>
+        <a href="/?srch=premier-league" class='bg-blue-400 rounded hover:bg-blue-500 p-1 m-2 w-32 text-center font-bold text-white'>Premier League</a>
+      </div>
+
+
+      <h1 class='mt-5 flex justify-center text-white font-bold mb-5 text-3xl'>{{TimeNow}}</h1>
+      </div>
+
+      {% block content %}
+
+      {% endblock content%}
+
+
+
+    </body>
+  </html>
