@@ -1,6 +1,9 @@
 # Flash-Feed
   Django Powered News Feed
 
+![](img/show1.PNG)
+
+
 # Features
   - Simple , Neat UI made with Tailwind
   - Custom Search Functionality.
